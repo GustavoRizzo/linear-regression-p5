@@ -33,7 +33,7 @@ export default class DraggablePoint {
         const p5 = this._p5; // to be more readable
         if (this.dragging) {
             this.pos_x = p5.mouseX;
-            this.pos_y = p5.mouseY;
+            this.pos_y = p5.invMouseY;
         }
         p5.point(this.pos_x, this.pos_y);
     }
@@ -46,7 +46,7 @@ export default class DraggablePoint {
 
     isMouseHover() {
         const p5 = this._p5; // to be more readable
-        var d = p5.dist(p5.mouseX, p5.mouseY, this.pos_x, this.pos_y);
+        var d = p5.dist(p5.mouseX, p5.invMouseY, this.pos_x, this.pos_y);
         return (d < this.radius);
     }
 

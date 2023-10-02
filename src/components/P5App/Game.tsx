@@ -9,8 +9,9 @@ let draggablePoint2: DraggablePoint;
 export function game (p5: P5Instance) {
     p5.setup = () => {
         p5.createCanvas(400, 400, p5.P2D);
+
         ball = new Ball(p5, 200, 200, 50);
-        draggablePoint1= new DraggablePoint(p5, 100, 100, 10);
+        draggablePoint1= new DraggablePoint(p5, 100, 50, 10);
         draggablePoint2= new DraggablePoint(p5, 300, 300, 10);
     }
 
@@ -25,6 +26,10 @@ export function game (p5: P5Instance) {
     }
 
     p5.draw = () => {
+        p5.translate(0, p5.height);
+        p5.scale(1, -1);
+        p5.invMouseY = p5.height - p5.mouseY;
+
         p5.background(111);
         ball.update();
 
