@@ -1,40 +1,42 @@
 import { P5Instance } from "react-p5-wrapper";
-import Ball from "./Ball";
 import DraggablePoint from "./DraggablePoint";
 
-let ball: Ball;
-let draggablePoint1: DraggablePoint;
-let draggablePoint2: DraggablePoint;
+let listPoints: Array<DraggablePoint> = [];
 
 export function game (p5: P5Instance) {
     p5.setup = () => {
         p5.createCanvas(400, 400, p5.P2D);
 
-        ball = new Ball(p5, 200, 200, 50);
-        draggablePoint1= new DraggablePoint(p5, 100, 50, 10);
-        draggablePoint2= new DraggablePoint(p5, 300, 300, 10);
+        // create a list of 10 draggable points
+        for (var i =0 ; i < 10; i++ ) {
+            var x = p5.random(p5.width);
+            var y = p5.random(p5.height);
+            listPoints.push(new DraggablePoint(p5, x, y, 12));
+        }
     }
 
     p5.mousePressed = () => {
-        draggablePoint1.clicked();
-        draggablePoint2.clicked();
+        listPoints.forEach(point => {
+            point.clicked();
+        });
     }
 
     p5.mouseReleased = () => {
-        draggablePoint1.dragging = false;
-        draggablePoint2.dragging = false;
+        listPoints.forEach(point => {
+            point.dragging = false;
+        });
     }
 
     p5.draw = () => {
+        // Make y-axis start at bottom and go up
         p5.translate(0, p5.height);
         p5.scale(1, -1);
         p5.invMouseY = p5.height - p5.mouseY;
 
         p5.background(111);
-        ball.update();
 
-        ball.show();
-        draggablePoint1.show();
-        draggablePoint2.show();
+        listPoints.forEach(point => {
+            point.show();
+        });
     }
 }
