@@ -26,6 +26,7 @@ export default class Ball {
     show() {
         const p5 = this._p5; // to be more readable
         p5.fill(255, 0, 0);
+        p5.strokeWeight(0)
         p5.ellipse(this.pos_x, this.pos_y, this.diameter, this.diameter);
     }
 }
