@@ -1,7 +1,9 @@
 import { P5Instance } from "react-p5-wrapper";
 import DraggablePoint from "./DraggablePoint";
+import LinearRegrassion from "./LinearRegrassion";
 
 let listPoints: Array<DraggablePoint> = [];
+let line: LinearRegrassion;
 
 export function game (p5: P5Instance) {
     p5.setup = () => {
@@ -13,6 +15,9 @@ export function game (p5: P5Instance) {
             var y = p5.random(p5.height);
             listPoints.push(new DraggablePoint(p5, x, y, 12));
         }
+
+        // create a line
+        line = new LinearRegrassion(p5, listPoints);
     }
 
     p5.mousePressed = () => {
@@ -33,10 +38,13 @@ export function game (p5: P5Instance) {
         p5.scale(1, -1);
         p5.invMouseY = p5.height - p5.mouseY;
 
-        p5.background(111);
+        p5.background(32, 37, 48);
 
         listPoints.forEach(point => {
             point.show();
         });
+
+        line.update();
+        line.show();
     }
 }
