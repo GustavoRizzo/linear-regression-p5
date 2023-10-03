@@ -23,9 +23,9 @@ export default class DraggablePoint {
             p5.stroke(255);
         } 
           else if (this.isMouseHover()) {
-            p5.stroke(200);
+            p5.stroke(80, 216, 144);
         } else {
-            p5.stroke(150);
+            p5.stroke(166, 221, 217);
         }
     }
 
