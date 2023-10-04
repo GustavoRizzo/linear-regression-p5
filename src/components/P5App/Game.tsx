@@ -1,11 +1,11 @@
-import { P5Instance } from "react-p5-wrapper";
+import {  P5CanvasInstance } from "@p5-wrapper/react";
 import DraggablePoint from "./DraggablePoint";
 import LinearRegrassion from "./LinearRegrassion";
 
 let listPoints: Array<DraggablePoint> = [];
 let line: LinearRegrassion;
 
-export function game (p5: P5Instance) {
+export function game (p5:  P5CanvasInstance) {
     p5.setup = () => {
         p5.createCanvas(400, 400, p5.P2D);
 
@@ -36,7 +36,7 @@ export function game (p5: P5Instance) {
         // Make y-axis start at bottom and go up
         p5.translate(0, p5.height);
         p5.scale(1, -1);
-        p5.invMouseY = p5.height - p5.mouseY;
+        (p5 as any).invMouseY  = p5.height - p5.mouseY;
 
         p5.background(32, 37, 48);
 

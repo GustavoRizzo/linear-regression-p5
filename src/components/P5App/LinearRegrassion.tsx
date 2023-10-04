@@ -1,8 +1,8 @@
-import { P5Instance } from "react-p5-wrapper";
+import {  P5CanvasInstance } from "@p5-wrapper/react";
 import DraggablePoint from "./DraggablePoint";
 
 export default class LinearRegrassion {
-    _p5: P5Instance;
+    _p5:  P5CanvasInstance;
     m: number = 1;
     b: number = 0;
     listPoints: Array<DraggablePoint> = [];
@@ -11,7 +11,7 @@ export default class LinearRegrassion {
     x_end: number = 0;
     y_end: number = 0;
 
-    constructor(p5: P5Instance, listPoints: Array<DraggablePoint>) {
+    constructor(p5:  P5CanvasInstance, listPoints: Array<DraggablePoint>) {
         this._p5 = p5;
         this.listPoints = listPoints;
     }

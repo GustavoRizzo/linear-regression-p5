@@ -1,13 +1,13 @@
-import { P5Instance } from "react-p5-wrapper";
+import {  P5CanvasInstance } from "@p5-wrapper/react";
 
 export default class DraggablePoint {
-    _p5: P5Instance;
+    _p5:  P5CanvasInstance;
     pos_x: number = 0;
     pos_y: number = 0;
     radius: number = 0;
     dragging: boolean = false;
 
-    constructor(p5: P5Instance, pos_x: number, pos_y: number, radius: number) {
+    constructor(p5:  P5CanvasInstance, pos_x: number, pos_y: number, radius: number) {
         this._p5 = p5;
         this.pos_x = pos_x;
         this.pos_y = pos_y;
@@ -33,7 +33,7 @@ export default class DraggablePoint {
         const p5 = this._p5; // to be more readable
         if (this.dragging) {
             this.pos_x = p5.mouseX;
-            this.pos_y = p5.invMouseY;
+            this.pos_y = (p5 as any).invMouseY;
         }
         p5.point(this.pos_x, this.pos_y);
     }
@@ -46,7 +46,7 @@ export default class DraggablePoint {
 
     isMouseHover() {
         const p5 = this._p5; // to be more readable
-        var d = p5.dist(p5.mouseX, p5.invMouseY, this.pos_x, this.pos_y);
+        var d = p5.dist(p5.mouseX, (p5 as any).invMouseY, this.pos_x, this.pos_y);
         return (d < this.radius);
     }
 
