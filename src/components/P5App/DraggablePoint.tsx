@@ -1,4 +1,4 @@
-import {  P5CanvasInstance } from "@p5-wrapper/react";
+import { P5CanvasInstance } from "@p5-wrapper/react";
 
 export default class DraggablePoint {
     _p5:  P5CanvasInstance;
