@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+# Linear Regression with p5.js Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+**linear-regression-p5** is a project developed using Vite, React, TypeScript, and the p5.js library. The primary aim of this project was to both deepen my understanding of linear regression algorithms across a variety of scenarios and create an interactive web interface where anyone can experiment with different scenarios and observe real-time results, all thanks to the powerful p5.js visualization capabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
 
-## Expanding the ESLint configuration
+### Technologies Used
+- **Vite**: A fast, modern, and lean build tool for web development.
+- **React**: A popular JavaScript library for building user interfaces.
+- **TypeScript**: A statically typed superset of JavaScript for enhanced code quality and developer experience.
+- **p5.js**: A JavaScript library for creative coding, making it easy to visualize data and create interactive graphics.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Project Features
+- Interactive Interface: Allows users to experiment with different linear regression scenarios.
+- Real-time Visualization: Provides immediate feedback on changes made, allowing users to observe the impact of alterations in real-time.
+- Educational: Offers a practical way to learn and understand the concepts behind linear regression algorithms.
+  
+## How to Use
 
-- Configure the top-level `parserOptions` property like this:
+### Live Demo
+To experience the project, you can visit the live demo [here](https://gustavorizzo.github.io/linear-regression-p5/).
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### Local Setup
+1. **Clone the Repository:**
+```shell
+git clone https://github.com/gustavorizzo/linear-regression-p5.git
 ```
+2. **Install Dependencies:**
+```shell
+cd linear-regression-p5
+npm install
+```
+3. **Run the Project:**
+```shell
+npm run dev
+```
+This will start the development server. Open your browser and visit `http://localhost:3000` to see the project in action.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Contributions
+
+Contributions are welcome! If you want to contribute to the project, feel free to create issues, open pull requests, or make suggestions. Your contributions can help improve this educational tool for others.
+
+Thank you for exploring **linear-regression-p5**! Happy coding! 🚀
