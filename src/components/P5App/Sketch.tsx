@@ -5,7 +5,7 @@ import LinearRegrassion from "./LinearRegrassion";
 let listPoints: Array<DraggablePoint> = [];
 let line: LinearRegrassion;
 
-export function game (p5:  P5CanvasInstance) {
+export function sketch (p5:  P5CanvasInstance) {
     p5.setup = () => {
         p5.createCanvas(400, 400, p5.P2D);
 

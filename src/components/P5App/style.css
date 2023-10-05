@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    font-family: "Roboto Mono",Sans-serif;    
+}
+
+.content {
+    width: min(95%,1024px);
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+  
+.instructions {
+    color: #e7db3d;
+}
+
+.react-p5-wrapper canvas {
+    width: min(100%, 400px) !important;
+    height: min(100%, 400px) !important;
+}

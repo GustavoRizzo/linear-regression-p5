@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: #FFF;
   background-color: #39433b;
-
+  background: conic-gradient( from 0deg at 0% 0% in hsl, #04364A 0%, #598593 100% );
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
