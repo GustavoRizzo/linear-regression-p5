@@ -2,7 +2,12 @@
     display: grid;
     justify-items: center;
     align-content: center;
-    font-family: "Roboto Mono",Sans-serif;    
+    color: #0f171e;
+    font-family: "system-ui",Sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Mono",Sans-serif;
 }
 
 .content {
@@ -13,7 +18,7 @@
 }
   
 .instructions {
-    color: #e7db3d;
+    color: #D5C927;
 }
 
 .react-p5-wrapper canvas {
